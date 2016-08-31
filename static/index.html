@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="restrunnerApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Rest API Runner</title>
+  <meta name="description" content="Single Page Application for testing REST API">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="css/restrunner.css">
+</head>
+
+<body ng-controller="restrunnerCtrl">
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <h3>Title</h3>
+  <div rest-http-method></div>
+
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="Raw">Raw Data</uib-tab>
+    <uib-tab index="1" heading="Tree">Tree View</uib-tab>
+  </uib-tabset>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <script src="js/restrunner.js"></script>
+  <script src="js/controllers/main_controller.js"></script>
+  <script src="js/directives/resthttpmethod.js"></script>
+  
+</body>
+
+</html>
