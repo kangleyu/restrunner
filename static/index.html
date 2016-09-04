@@ -19,13 +19,38 @@
   <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <h3>Title</h3>
-  <div rest-http-method></div>
+  <h3>REST API Runner</h3>
+  <!--<div rest-http-method></div>-->
 
-  <uib-tabset active="active">
-    <uib-tab index="0" heading="Raw">Raw Data</uib-tab>
-    <uib-tab index="1" heading="Tree">Tree View</uib-tab>
-  </uib-tabset>
+  <div class="section1">
+    <div class="httpmethod-section">
+      <label for="htmlmethod">HTTP: </label>
+      <select class="form-control http-method-option">
+        <option ng-repeat="item in httpMethods" ng-value="item" ng-selected="selectedMethod == item">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="url-section">
+      <label for="url">URL: </label>
+      <input type="text" placeholder="Enter URL here..." class="form-control" ng-model="urlAddress">
+    </div>
+
+    <div class="execute-section">
+      <input type="button" class="btn btn-primary" value="Execute" ng-click="execute()">
+    </div>
+  </div>
+
+  <div class="section2">
+    <label for="httpHeader">Headers: </label>
+    <textarea name="httpHeader" id="httpHeader" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+
+  <div class="response-section">
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Raw">{{rawResponse}}</uib-tab>
+        <uib-tab index="1" heading="Tree">Tree View</uib-tab>
+      </uib-tabset>
+  </div>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -33,11 +58,10 @@
   <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  
+
   <script src="js/restrunner.js"></script>
   <script src="js/controllers/main_controller.js"></script>
-  <script src="js/directives/resthttpmethod.js"></script>
-  
+
 </body>
 
 </html>
